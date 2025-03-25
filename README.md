@@ -10,5 +10,19 @@ Instead of hearing from AI, such as ChatGPT and Grok, hearing it with emotions w
 ## Timeline and structures
 
 ### Find dataset
+An alternative to movies is to use scripts for voice actors or plays.
+ost of the datasets that I find is using short audios without prior context. 
+Going to try with one movie, harry potter first. Just came to point that the presenting facial recognition is not very accurate, might just going to analysis the tone of each line and discard emotions as it might be a constraint. But will see how it performs after trying. 
 ### Find research and structures or existing models to capture faces with emotions
+SE ResNet model to analysis emotions of face. 
+load existing model using: https://paperswithcode.com/model/se-resnet?variant=seresnet50#:~:text=SE%20ResNet%20is%20a%20variant,dynamic%20channel%2Dwise%20feature%20recalibration.
+```
+import timm
+m = timm.create_model('seresnet50', pretrained=True)
+m.eval()
+```
+#### What is next 
+Allow real time face capture and emotion analysis for videos, and output lines with emotions. 
+##### How
+Analysis whenever there are voices appearing, starting capturing faces corresponding to the character, analysis general or overall emotions, and export the line and emotions as csv file for model training. 
 ### Construct dataset with matching emotions and lines 
